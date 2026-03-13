@@ -394,3 +394,16 @@ fs.watchFile(__filename, () => {
     console.log(chalk.white.bold("~> Update File :"), chalk.green.bold(__filename));
     import(`${pathToFileURL(__filename).href}?update=${Date.now()}`);
 });
+
+const express = require("express")
+const app = express()
+
+const PORT = process.env.PORT || 3000
+
+app.get("/", (req, res) => {
+  res.send("Bot Andy Web Running 🚀")
+})
+
+app.listen(PORT, () => {
+  console.log("Server started")
+})
